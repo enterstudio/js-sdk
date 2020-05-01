@@ -30,7 +30,9 @@
     "test": "mocha --compilers js:babel-core/register -r babel-polyfill -s 100 --recursive test/unit/index test/unit",
     "test:watch": "mocha -w --compilers js:babel-core/register -r babel-polyfill -s 100 --recursive test/unit/index test/unit",
     "transpile": "BABEL_ENV=production babel --no-comments --out-dir dist src",
-    "version": "npm run build && git add -A dist"
+    "version": "npm run build && git add -A dist",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "append-query": "^1.1.0",
@@ -48,7 +50,8 @@
     "sift": "^3.0.0",
     "superagent": "^2.3.0",
     "uid": "0.0.2",
-    "url-pattern": "^1.0.0"
+    "url-pattern": "^1.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "app-module-path": "2.1.0",
@@ -82,5 +85,6 @@
   "keywords": [
     "Kinvey",
     "NodeJS"
-  ]
+  ],
+  "snyk": true
 }
